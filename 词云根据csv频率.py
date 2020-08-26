@@ -21,8 +21,8 @@ pathOfFont = currentPath / "字体" / "sy.otf"
 pathOfText = currentPath / "源文本" / "琉璃.csv"
 font = str(pathOfFont)
 yuanfile = str(pathOfText)
-image=np.array(Image.open('mianjv.png')) # 管形状
-bi_c = np.array(Image.open('琉璃2.jpg')) # 管颜色（高度要比上面那个大）
+image=np.array(Image.open('形状.png')) # 管形状,注意图片要处理成白底黑型
+bi_c = np.array(Image.open('颜色.jpg')) # 管颜色（高度要比上面那个大）
 img_colors = ImageColorGenerator(bi_c)
 stop_words = open("stopwords_CN.txt",encoding="utf8").read().split("\n")
 # 读取词频文件
