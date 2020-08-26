@@ -16,15 +16,13 @@ import  matplotlib.pyplot as plt
 from pathlib import Path
 
 currentPath = Path(".")#当前位置
-pathOfFont = currentPath / "字体" / "明朝.otf"
+# 设置这里的字体和源文本文件
+pathOfFont = currentPath / "字体" / "sy.otf"
 pathOfText = currentPath / "源文本" / "琉璃.csv"
-#设置这里就好
 font = str(pathOfFont)
-# font=r'./字体/繁体思源宋.otf' 
-# yuanfile = r'./源文本/琉璃.csv'#源文本
 yuanfile = str(pathOfText)
-image=np.array(Image.open('琉璃.jpg')) # 图片模板
-bi_c = np.array(Image.open('琉璃.jpg'))
+image=np.array(Image.open('mianjv.png')) # 管形状
+bi_c = np.array(Image.open('琉璃2.jpg')) # 管颜色（高度要比上面那个大）
 img_colors = ImageColorGenerator(bi_c)
 stop_words = open("stopwords_CN.txt",encoding="utf8").read().split("\n")
 # 读取词频文件
@@ -40,7 +38,7 @@ dic = dict(zip(name, value))  # 词频以字典形式存储
 
 # 关键一步
 my_wordcloud = WordCloud(scale=4,font_path=font,mask=image,mode='RGBA',background_color=None,
-                         max_words = 450,max_font_size = 120,random_state=2,stopwords=stop_words,color_func=img_colors)
+                         max_words = 800,max_font_size = 90,random_state=,stopwords=stop_words,color_func=img_colors)
 my_wordcloud.generate_from_frequencies(dic)
 #显示生成的词云 
 plt.imshow(my_wordcloud)
