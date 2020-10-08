@@ -17,7 +17,7 @@ from pathlib import Path
 
 currentPath = Path(".")#当前位置
 pathOfFont = currentPath / "字体" / "hy.ttf"
-pathOfText = currentPath / "源文本" / "尚世传媒.csv"
+pathOfText = currentPath / "源文本" / "尚世影业.csv"
 #设置这里就好
 font = str(pathOfFont)
 # font=r'./字体/繁体思源宋.otf' 
