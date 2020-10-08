@@ -16,15 +16,15 @@ import  matplotlib.pyplot as plt
 from pathlib import Path
 
 currentPath = Path(".")#当前位置
-pathOfFont = currentPath / "字体" / "明朝.otf"
-pathOfText = currentPath / "源文本" / "琉璃.csv"
+pathOfFont = currentPath / "字体" / "hy.ttf"
+pathOfText = currentPath / "源文本" / "尚世传媒.csv"
 #设置这里就好
 font = str(pathOfFont)
 # font=r'./字体/繁体思源宋.otf' 
 # yuanfile = r'./源文本/琉璃.csv'#源文本
 yuanfile = str(pathOfText)
-image=np.array(Image.open('琉璃.jpg')) # 图片模板
-bi_c = np.array(Image.open('琉璃.jpg'))
+image=np.array(Image.open('mask.jpg')) # 图片模板
+bi_c = np.array(Image.open('颜色.jpg'))
 img_colors = ImageColorGenerator(bi_c)
 stop_words = open("stopwords_CN.txt", encoding="utf8").read().split("\n")
 # 读取词频文件
